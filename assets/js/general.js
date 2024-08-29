@@ -4,6 +4,38 @@ $( document ).ready(function() {
 $( window ).load(function() {
     console.log( "window loaded" );
 });
+$(document).ready(function(){
+  $('ul li a').click(function(){
+    $('li a').removeClass("active");
+    $(this).addClass("active");
+});
+});
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+    
+});
+
+
+// $("#navButton").click(function() {
+// $('.nav-menu').toggleClass('expand');
+// $(".menu").slideToggle();
+// });
+
+  // $('#navButton').on('click', function(){
+  //   $('.navbar').toggleClass('expand');
+  //   return false;
+  // });
 
 jQuery(document).ready(function(){
 	
@@ -19,7 +51,7 @@ jQuery(document).ready(function(){
 
 });
 var typed = new Typed(".multiple-text", {
-	strings: ["Student","Hacker","Programmer","Physics Enthutiast","Dreamer" ],
+	strings: ["Web Designer","UI / UX Designer","App Designer","Graphic Designer" ],
 	typeSpeed: 100,
 	backSpeed: 100,
 	backDelay: 1000,
@@ -45,6 +77,7 @@ var typed = new Typed(".multiple-text", {
 
   $('.owl-carousel').owlCarousel({
     loop:true,
+    nav:true,
     margin:10,
     responsive:{
         0:{
@@ -57,4 +90,30 @@ var typed = new Typed(".multiple-text", {
             items:3
         }
     }
-})
+});
+
+jQuery(window).scroll(function(){
+  if (jQuery(this).scrollTop() > 50) {
+     jQuery('#header-area').addClass('newclass');
+  } else {
+     jQuery('#header-area').removeClass('newclass');
+  }
+});
+
+
+    var btn = $('#back-to-top');
+
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    });
+    
+    btn.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+    
+    
