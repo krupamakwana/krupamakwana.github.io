@@ -41,11 +41,11 @@ body {
     from {left: calc(-100% - 0px);}
     to {left: 0px;} 
 }
+
 #header-area{
 	-webkit-box-ordinal-group: 0;
     align-self: stretch;
-    /* background: #fff; */
-    /* border-bottom: 1px solid #efefef; */
+
     display: flex !important;
     height: auto !important;
     left: 0;
